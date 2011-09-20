@@ -27,7 +27,7 @@
                             $pegawai->golongan,
                             anchor(base_url() . 'admin/con_data_pegawai/edit/'.$pegawai->nip,'Edit').
                             ' | '.
-                            anchor(base_url() . 'admin/con_data_pegawai/delete/'.$pegawai->nip,'Delete')
+                            anchor(base_url() . 'admin/con_data_pegawai/warning_delete/'.$pegawai->nip,'Delete')
                         );
                     $i++;
                 }
@@ -37,6 +37,18 @@
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/list_pegawai',$display);
             $this->load->view('admin/admin_footer_view');
+        }
+        
+        function warning_delete($nip){
+            $data['title']='WARNING!!';
+            $display['content']=$nip;
+            $this->load->view('admin/admin_header_view',$data);
+            $this->load->view('admin/warning_delete_pegawai',$display);
+            $this->load->view('admin/admin_footer_view');
+        }
+        
+        function delete($nip){
+            $this->model_data_pegawai->deleteByNIP($nip);
         }
     }
 ?>
