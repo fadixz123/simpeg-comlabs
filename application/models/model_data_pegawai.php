@@ -42,7 +42,7 @@
             return $query_by_status;
         }
         
-        function selectByStatus($golongan){
+        function selectByGol($golongan){
             $query_by_golongan = $this->db->get_where('data_pegawai',array('golongan'=>$golongan));
             return $query_by_golongan;
         }
