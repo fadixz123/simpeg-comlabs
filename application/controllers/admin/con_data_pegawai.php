@@ -104,10 +104,9 @@
             $display['tgl_jabat']=$array_data->tgl_menjabat;
             $display['status']=$array_data->status;
             $display['golongan']=$array_data->golongan;
-            echo $array_data->nip;
             $array_pribadi = $this->model_data_pribadi->selectByNIP($nip)->row();
             if($array_pribadi){
-                $display['stat_data']='true';
+                $display['stat_data']=TRUE;
                 $display['tempat_lahir']=$array_pribadi->tempat_lahir;
                 $display['tgl_lahir']=$array_pribadi->tgl_lahir;
                 $display['agama']=$array_pribadi->agama;
@@ -118,13 +117,60 @@
                 $display['nama_ibu']=$array_pribadi->nama_ibu;
                 $display['jenis_kelamin']=$array_pribadi->jenis_kelamin;
             }else{
-                $display['stat_data']='false';
+                $display['stat_data']=FALSE;
             }
-            
             $data['title'] = 'Profil '.$display['nama'];
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/profil_pegawai',$display);
             $this->load->view('admin/admin_footer_view');
+        }
+
+        function edit_pribadi($nip,$mode){
+
+            if($mode=='edit'){
+                $array_data = $this->model_data_pribadi->selectByNIP($nip)->row();
+
+                $display['mode']=$mode;
+                $display['nip']=$array_data->nip;
+                $display['tempat_lahir']=$array_data->tempat_lahir;
+                $display['tgl_lahir']=$array_data->tgl_lahir;
+                $display['agama']=$array_data->agama;
+                $display['status_nikah']=$array_data->status_nikah;
+                $display['jum_tanggungan']=$array_data->jum_tanggungan;
+                $display['alamat']=$array_data->alamat;
+                $display['nama_bapak']=$array_data->nama_bapak;
+                $display['nama_ibu']=$array_data->nama_ibu;
+                $display['jenis_kelamin']=$array_data->jenis_kelamin;
+
+                $data['title'] = 'Edit data pribadi pegawai';
+            }else{
+                $display['mode']=$mode;
+                $display['nip']=$nip;
+                $display['tempat_lahir']='';
+                $display['tgl_lahir']='';
+                $display['agama']='';
+                $display['status_nikah']='';
+                $display['jum_tanggungan']='';
+                $display['alamat']='';
+                $display['nama_bapak']='';
+                $display['nama_ibu']='';
+                $display['jenis_kelamin']='';
+
+                $data['title'] = 'Tambah data pribadi pegawai';
+            }
+            $this->load->view('admin/admin_header_view',$data);
+            $this->load->view('admin/form_data_pribadi',$display);
+            $this->load->view('admin/admin_footer_view');
+        }
+
+        function op_edit_pribadi($mode){
+            if($mode=='edit'){
+                $nip = $_POST['nip'];
+                $this->model_data_pribadi->updateData($nip,$_POST);
+            }else if($mode=='insert'){
+                $this->model_data_pribadi->insert($_POST);
+            }
+            redirect(base_url().'admin/con_data_pegawai/view/'.$_POST['nip']);
         }
     }
 ?>
