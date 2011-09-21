@@ -1,4 +1,9 @@
 <center>
+    <script>
+        $(function() {
+                $( ".date_picker" ).datepicker({dateFormat:'yy-mm-dd'});
+        });
+    </script>
     <form method="post" action="<?php echo base_url()?>admin/con_data_pegawai/op_edit/<?php echo $mode?>">
         <table width="366" border="1">
             <tr>
@@ -27,7 +32,7 @@
                     Tgl Angkat Capeg
                 </td>
                 <td>
-                    <input type="text" name="tgl_angkat_capeg" id="tgl_angkat_capeg" value="<?php echo $tgl_capeg?>"/>
+                    <input class="date_picker" type="text" name="tgl_angkat_capeg" id="tgl_angkat_capeg" value="<?php echo $tgl_capeg?>"/>
                 </td>
             </tr>
             <tr>
@@ -35,7 +40,7 @@
                     Tgl Angkat Peg
                 </td>
                 <td>
-                    <input type="text" name="tgl_angkat_peg" id="tgl_angkat_peg" value="<?php echo $tgl_peg?>"/>
+                    <input class="date_picker" type="text" name="tgl_angkat_peg" id="tgl_angkat_peg" value="<?php echo $tgl_peg?>"/>
                 </td>
             </tr>
             <tr>
@@ -43,7 +48,7 @@
                     Tgl Menjabat
                 </td>
                 <td>
-                    <input type="text" name="tgl_menjabat" id="tgl_menjabat" value="<?php echo $tgl_jabat?>"/>
+                    <input class="date_picker" type="text" name="tgl_menjabat" id="tgl_menjabat" value="<?php echo $tgl_jabat?>"/>
                 </td>
             </tr>
             <tr>

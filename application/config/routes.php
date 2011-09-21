@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "";
+$route['default_controller'] = "admin/con_data_pegawai";
 $route['404_override'] = '';
 
 
