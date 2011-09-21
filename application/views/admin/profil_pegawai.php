@@ -1,5 +1,5 @@
 <h2>
-    Data pegawai
+    Data Pegawai
 </h2>
 NIP : <?php echo $nip?>
 <br/>
@@ -18,7 +18,7 @@ Golongan : <?php echo $golongan?>
 <a href="<?php echo base_url() ?>admin/con_data_pegawai/edit/<?php echo $nip ?>">edit</a>
 
 <h2>
-    Profil pegawai
+    Profil Pegawai
 </h2>
 <?php
 $mode="edit";
@@ -42,3 +42,5 @@ Nama Ibu : <?php if($stat_data) echo $nama_ibu?>
 Jenis Kelamin : <?php if($stat_data) echo $jenis_kelamin?>
 <br/>
 <a href="<?php echo base_url() ?>admin/con_data_pegawai/edit_pribadi/<?php echo $nip."/".$mode ?>">edit</a>
+<br />
+<a href="<?php echo base_url() ?>admin/con_data_pendidikan_terakhir/view/<?php echo $nip ?>">Pendidikan Terakhir</a>
