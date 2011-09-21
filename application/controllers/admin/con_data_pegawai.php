@@ -104,14 +104,11 @@
             $display['tgl_jabat']=$array_data->tgl_menjabat;
             $display['status']=$array_data->status;
             $display['golongan']=$array_data->golongan;
-            
+            echo $array_data->nip;
             $array_pribadi = $this->model_data_pribadi->selectByNIP($nip)->row();
-            echo $array_pribadi;
-            echo $array_pribadi->nama;
-            die();
-            if($array_pribadi!=''){
+            if($array_pribadi){
                 $display['stat_data']='true';
-                $display['tempat_lahir']=$array_pribadi->nama;
+                $display['tempat_lahir']=$array_pribadi->tempat_lahir;
                 $display['tgl_lahir']=$array_pribadi->tgl_lahir;
                 $display['agama']=$array_pribadi->agama;
                 $display['status_nikah']=$array_pribadi->status_nikah;
