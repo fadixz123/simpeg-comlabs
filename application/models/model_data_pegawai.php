@@ -15,8 +15,8 @@
         function insert($array_data=''){
             if($array_data ==''){
                 $array_data = array(
-                  'nip'=>$this->$nip,
-                  'nama'=>$this->$nama,
+                  'nip'=>$this->nip,
+                  'nama'=>$this->nama,
                   'tgl_angkat_capeg'=>$this->tglAngkatCapeg,
                   'tgl_angkat_peg'=>$this->tglAngkatPeg,
                   'tgl_menjabat'=>$this->tglMenjabat,
