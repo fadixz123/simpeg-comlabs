@@ -30,5 +30,5 @@ Tanggal Nikah : <?php echo $tgl_nikah?>
 <br/>
 <a href="<?php echo base_url() ?>admin/con_data_pasangan/warning_delete/<?php echo $nip ?>">delete</a>
 <br/>
-<a href="<?php echo base_url() ?>admin/con_data_pegawai">kembali</a>
+<a href="<?php echo base_url() ?>admin/con_data_pegawai/view/<?php echo $nip ?>">kembali</a>
 <br/>

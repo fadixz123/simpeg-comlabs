@@ -19,21 +19,14 @@
             }else{
                 $this->load->library('table');
                 $this->table->set_template(array('table_open' => '<table align="center" width="80%" border="1" cellpadding="2" cellspacing="2">'));
-                $this->table->set_heading('No', 'Nama', 'Status', 'Golongan','Pasangan','Aksi');
+                $this->table->set_heading('No', 'Nama', 'Status', 'Golongan','Aksi');
                 $i=1;
                 foreach($all_pegawai->result() as $pegawai){
-                    $pasangan = $this->model_data_pasangan->selectByNIP($pegawai->nip);
-                    if ($pasangan->num_rows() == 0) {
-                        $pasangan = anchor(base_url() . 'admin/con_data_pasangan/edit/'.$pegawai->nip.'/new','Tambah');
-                    } else {
-                        $pasangan = anchor(base_url() . 'admin/con_data_pasangan/view/'.$pegawai->nip,$pasangan->row()->nama_pasangan);
-                    }
                     $this->table->add_row(
                             $i,
                             anchor(base_url() . 'admin/con_data_pegawai/view/'.$pegawai->nip,$pegawai->nama),
                             $pegawai->status,
                             $pegawai->golongan,
-                            $pasangan,
                             anchor(base_url() . 'admin/con_data_pegawai/edit/'.$pegawai->nip,'Edit').
                             ' | '.
                             anchor(base_url() . 'admin/con_data_pegawai/warning_delete/'.$pegawai->nip,'Delete')
@@ -127,6 +120,14 @@
             }else{
                 $display['stat_data']=FALSE;
             }
+            
+            $display['pasangan'] = $this->model_data_pasangan->selectByNIP($nip);
+            if ($display['pasangan']->num_rows() == 0) {
+                $display['pasangan'] = anchor(base_url() . 'admin/con_data_pasangan/edit/'.$nip.'/new','Tambah Pasangan').'<br />';
+            } else {
+                $display['pasangan'] = anchor(base_url() . 'admin/con_data_pasangan/view/'.$nip,'Lihat Pasangan').'<br />';
+            }
+                    
             $data['title'] = 'Profil '.$display['nama'];
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/profil_pegawai',$display);

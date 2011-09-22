@@ -73,7 +73,7 @@
         
         function delete($nip){
             $this->model_data_pasangan->deleteByNIP($nip);
-            redirect('admin/con_data_pegawai');
+            redirect('admin/con_data_pegawai/view/'.$nip);
         }
         
         function edit($nip='',$mode=''){
@@ -127,7 +127,7 @@
             }else if($mode=='tambah'){
                 $this->model_data_pasangan->insert($_POST);
             }
-            redirect(base_url().'admin/con_data_pasangan');
+            redirect(base_url().'admin/con_data_pasangan/view/'.$_POST['nip']);
         }
         
         function view($nip){
