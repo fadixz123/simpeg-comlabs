@@ -49,7 +49,7 @@
             $this->db->delete('data_organisasi');
         }
         
-        function updateData($nip,$array_data=''){
+        function updateData($id,$array_data=''){
             if($array_data ==''){
                 $array_data = array(
                   'nip'=>$this->nip,
@@ -62,7 +62,7 @@
                   'jabatan'=>$this->jabatan
                 );
             }
-            $this->db->where('nip',$nip);
+            $this->db->where('id',$id);
             $this->db->update('data_organisasi',$array_data);
         }
         

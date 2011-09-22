@@ -67,6 +67,7 @@
                 $array_data = $this->model_data_organisasi->selectByID($id)->row();
                 
                 $display['mode']='edit';
+                $display['id']=$array_data->id;
                 $display['nip']=$array_data->nip;
                 $display['nama_org']=$array_data->nama_org;
                 $display['jenis']=$array_data->jenis;
@@ -97,8 +98,8 @@
         
         function op_edit($mode){
             if($mode=='edit'){
-                $nip = $_POST['nip'];
-                $this->model_data_organisasi->updateData($nip,$_POST);
+                $id = $_POST['id'];
+                $this->model_data_organisasi->updateData($id,$_POST);
             }else if($mode=='tambah'){
                 $this->model_data_organisasi->insert($_POST);
             }

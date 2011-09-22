@@ -1,5 +1,5 @@
 <h1 align="center">
-    Apakah anda yakin untuk menghapus pegawai dengan NIP <?php echo $nip?> ?
+    Apakah anda yakin untuk menghapus organisasi pegawai dengan NIP <?php echo $nip?> ?
 </h1>
 <br/>
 <h2 align="center">

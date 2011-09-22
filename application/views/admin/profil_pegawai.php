@@ -49,3 +49,5 @@ Jenis Kelamin : <?php if($stat_data) echo $jenis_kelamin?>
 <a href="<?php echo base_url() ?>admin/con_data_pegawai">Lihat Semua Pegawai</a>
 <br />
 <a href="<?php echo base_url() ?>admin/con_data_organisasi/list_all/<?php echo $nip ?>">Lihat Data Organisasi</a>
+<br />
+<a href="<?php echo base_url() ?>admin/con_data_dev_mandiri/list_all/<?php echo $nip ?>">Lihat Data Pengembangan Mandiri</a>
