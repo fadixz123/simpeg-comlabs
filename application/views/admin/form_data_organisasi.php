@@ -12,8 +12,10 @@
                 </td>
                 <td width="200">
                     <?php echo $nip?>
-                    <?php echo '<input type="hidden" name="id" id="id" value="'.$id.'" />'?>  
                     <?php echo '<input type="hidden" name="nip" id="nip" value="'.$nip.'" />'?>
+                    <?php if($mode=='edit') {?>
+                        <?php echo '<input type="hidden" name="id" id="id" value="'.$id.'" />'?>  
+                    <?php }?> 
                 </td>
             </tr>
             <tr>

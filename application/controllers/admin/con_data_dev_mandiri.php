@@ -79,7 +79,7 @@
                 $display['no_sertifikat']=$array_data->no_sertifikat;  
                 $display['predikat']=$array_data->predikat;
                 
-                $data['title'] = 'Edit data organisasi';
+                $data['title'] = 'Edit data pengembangan mandiri';
             }else{
                 $display['mode']='tambah';
                 $display['nip']=$nip;
@@ -92,7 +92,7 @@
                 $display['no_sertifikat']='';  
                 $display['predikat']='';
                 
-                $data['title'] = 'Tambah data organisasi';
+                $data['title'] = 'Tambah data pengembangan mandiri';
             }
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/form_data_mandiri',$display);

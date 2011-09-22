@@ -4,7 +4,7 @@
                 $( ".date_picker" ).datepicker({dateFormat:'yy-mm-dd'});
         });
     </script>
-    <form method="post" action="<?php echo base_url()?>admin/con_data_dev_mandiri/op_edit/<?php echo $mode?>">
+    <form method="post" action="<?php echo base_url()?>admin/con_data_diklat/op_edit/<?php echo $mode?>">
         <table width="366" border="1">
             <tr>
                 <td width="150">
@@ -15,39 +15,31 @@
                     <?php echo '<input type="hidden" name="nip" id="nip" value="'.$nip.'" />'?>
                     <?php if($mode=='edit') {?>
                         <?php echo '<input type="hidden" name="id" id="id" value="'.$id.'" />'?>  
-                    <?php }?>  
+                    <?php }?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Nama Kursus
+                    Nama Pelatihan
                 </td>
                 <td>
-                    <input type="text" name="nama_kursus" id="nama_kursus" value="<?php echo $nama_kursus?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Jenis Kursus
-                </td>
-                <td>
-                    <input type="text" name="jenis_kursus" id="jenis_kursus" value="<?php echo $jenis_kursus?>"/>
+                    <input type="text" name="nama_pelatihan" id="nama_pelatihan" value="<?php echo $nama_pelatihan?>"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Penyelenggara
+                    Jenis Pelatihan
                 </td>
                 <td>
-                    <input type="text" name="penyelenggara" id="penyelenggara" value="<?php echo $penyelenggara?>"/>
+                    <input type="text" name="jenis_pelatihan" id="jenis_pelatihan" value="<?php echo $jenis_pelatihan?>"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Alamat
+                    Status Lulus
                 </td>
                 <td>
-                    <input type="text" name="alamat" id="alamat" value="<?php echo $alamat?>"/>
+                    <input type="text" name="status_lulus" id="status_lulus" value="<?php echo $status_lulus?>"/>
                 </td>
             </tr>
             <tr>
@@ -68,10 +60,10 @@
             </tr>
             <tr>
                 <td>
-                    No Sertifikat
+                    Rangking
                 </td>
                 <td>
-                    <input type="text" name="no_sertifikat" id="no_sertifikat" value="<?php echo $no_sertifikat?>"/>
+                    <input type="text" name="rangking" id="rangking" value="<?php echo $rangking?>"/>
                 </td>
             </tr>
             <tr>
