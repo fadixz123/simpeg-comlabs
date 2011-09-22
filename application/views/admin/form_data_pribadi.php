@@ -16,7 +16,7 @@
                     <input type="hidden" name="nip" id="nip" value="<?php echo $nip?>"/>
                     <?php } else if($mode=='edit') {?>
                         <?php echo $nip?>
-                        <?php echo '<input type="hidden" name="nip" id="nip" value="'.$nip.'" disabled />'?>
+                        <?php echo '<input type="hidden" name="nip" id="nip" value="'.$nip.'" />'?>
                     <?php }?>
                 </td>
             </tr>
