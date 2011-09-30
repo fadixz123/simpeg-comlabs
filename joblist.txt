@@ -1,0 +1,28 @@
+- pegawai
+	- anak -> barata
+	- pengalaman kerja -> huda
+	- penghargaan eksternal -> ansel
+	- penghargaan internal -> barata
+	- sanksi -> huda
+	- riwayat pekerjaan -> ansel
+	- data sk lain2 -> barata
+	- pengalaman -> huda
+
+- disen dibenerin barata
+- barata ngubah database nambah pegawai jadi jabatan sekaligus edit, insert, retrieve pada form jabatan
+
+- modul cari bawahan -> ansel
+	- search nama + jabatan -> yang g punya atasan
+	- choose bawahan -> dikasi nip atasan
+	- retrieve bawahan -> memuat bawahan yang dia punya
+	- delete bawahan -> mengosongkan kolom atasaan pada bawahan tersebut
+
+- modul usulan diklat
+	- pengusul -> huda
+		- insert data ke database dengan status pending
+		- edit hanya bisa mengedit yang sedang pending
+		- delete, hanya bisa mendelete yang pending
+		- retrieve semua usulan yang pernah diusulkannya
+	- pengapprove -> ansel
+		- retrieve semua usulan yang diusulkan bawahannya
+		- reject atau app usulan yang pending, atau cancel untuk kembali menjadi pending
