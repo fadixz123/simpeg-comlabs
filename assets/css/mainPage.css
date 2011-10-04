@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* 
+	Author 		: Muhammmad Hasan
+	nama file	: mainPage.css
+	fungsi		: mengatur style halman utama
+*/  
+
+.contentIsi {
+	width: 1100px;
+	text-align: left;
+}
+.contentIsi .navPan {
+	font-family:'VegurRegular';
+	width: 200px;
+	text-align: right;
+	display: inline;
+	float: left;
+}
+.contentIsi .isi {
+	width: 600px;
+	border-right: #CCC 1px solid;
+	border-left: #CCC 1px solid;
+	display: inline;
+	float: left;
+}.rightPanel{
+	padding: 0 10px;
+	width: 260px;
+	float: left;
+}.navPan ul{
+	position: relative;
+	bottom: 0;
+	padding: 10px 20px;
+	margin: 0;
+	list-style:none;
+}.navPan ul li a{
+	color:#000;
+	text-decoration:none;
+	transition: color 400ms;
+	-webkit-transition: color 400ms;
+	-moz-transition: color 400ms;
+	-o-transition: color 400ms;
+}.navPan ul li a:hover{
+	color:#06C;
+}
+.time {
+	text-align:right;
+	padding: 5px 20px;
+}.jqclock { 
+    font-family: 'VegurLight';
+	font-size: 34px;
+	letter-spacing: -1px;
+	font-weight:normal;
+	color:#000;
+}#date{
+	margin: -5px 0 0 0;
+}#date .clocktime{
+	display:none;
+}
+#date .clockdate{
+	font-size: 13px;
+	font-family:Arial, Helvetica, sans-serif;
+	letter-spacing: 0px;
+	color:#666;
+}
+.news{
+	float:left;
+	width: 580px;
+	display: block;
+	margin: 0;
+	padding: 10px 10px 10px 8px;
+	border-left:#FFF 2px solid;
+	border-bottom: #CCC 1px dashed;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+}.news:hover ,.news2:hover{
+	border-left:#06C 2px solid;
+}.news2{
+	width:280px;
+	padding: 10px 10px 10px 8px;
+	height: 160px;
+	display: inline-block;
+	float:left;
+	border-left:#FFF 2px solid;
+	border-bottom: #CCC 1px dashed;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+}
+.isi h1 {
+    font-family: 'VegurLight';
+	line-height: 100%;
+	font-weight:lighter;
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+	color:#06C;
+}.isi h2 {
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	font-style:italic;
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	color:#666;
+}.isi img {
+	margin: 5px 0;
+	box-shadow:#666 2px 3px 2px;
+	border-radius: 5px;
+}.isi p {
+	padding:0;
+	margin: 5px 0;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333;
+	font-size: 12px;
+}.isi p a {
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	font-weight: bold;
+	color:#06C;
+	font-size: 13px;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+}.isi p a:hover {
+	color:#000;
+}.isi .text{
+	margin: 5px 0;
+	width: auto !important;
+	border: #CCC 1px solid;
+	display:block;
+}.isi th{
+	font-family:'VegurLight';
+	font-size: 16px;
+	color:#0066CC;
+	font-weight:lighter;
+	border-bottom:#000000 1px solid;
+	text-align: center;
+}.isi td{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: center;
+/*	border-bottom:#ccc 1px solid !important;*/
+}
+.rightPanel *{
+	padding: 0;
+	margin: 0;
+}.rightPanel h1{
+	font-family:'VegurLight';
+	font-weight:lighter;
+	font-size: 30px;
+	color:#000;
+}.rightPanel h2{
+	font-family:'VegurLight';
+	font-weight:lighter;
+	font-size: 20px;
+	color:#0066CC;
+}.rightPanel h3{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	font-size: 13px;
+	font-style:italic;
+	color:#666;
+}.rightPanel p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	font-size: 13px;
+	color:#333;
+	padding: 5px 0;
+}.rightPanel ul{
+	border-top:#FFFFFF 1px dashed;
+	list-style:none;
+}.rightPanel ul li{
+	background:#FFF;
+	padding: 5px;
+	display: block;
+	border-bottom:#CCC 1px dashed;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+}.rightPanel ul li:hover{
+	background:#C6E3F2
+}.rightPanel ul li:hover a{
+	color:#069;
+}.rightPanel ul li a{
+	font-family:'VegurRegular';
+	font-size: 14px;
+	text-decoration:none;
+	color:#333;
+}.rightPanel .text {
+	border: #CCC 1px solid;
+	padding: 4px;
+	margin: 5px 0;
+}.rightPanel .button {
+	padding: 3px 20px;
+	margin: 5px 0;
+}

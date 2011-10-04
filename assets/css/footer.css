@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* 
+	Author 		: Muhammmad Hasan
+	nama file	: footer.css
+	fungsi		: mengatur style bagian kaki halaman
+*/  
+.footer{
+	border-bottom:#000 solid 24px;
+	width: 100%;
+	float:left;
+}
+.footer .credit {
+	text-align: right;
+	font-family:Arial;
+	font-size: 11px;
+	padding: 10px;
+}
+.footer .maps {
+	width: 900px;
+	text-align: left;
+	padding: 0;
+}
+.maps .map{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 5px;
+}.maps ul.map h3{
+	font-family:'VegurRegular';
+	font-weight:lighter;
+	line-height: 100%;
+	padding: 0;
+	margin: 0;
+	color:#000;
+	font-size: 14px;
+}.maps ul.map li a{
+	font-family: Arial;
+	color:#999999;
+	line-height: 100%;
+	font-size:11px;
+	text-decoration: none;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	-moz-transition: all 400ms;
+	-o-transition: all 400ms;
+}.maps ul.map li a:hover{
+	color: #000;
+}.maps ul.map li{
+	display: block;
+	padding: 1px 0 !important;
+	margin:0 !important;
+}
