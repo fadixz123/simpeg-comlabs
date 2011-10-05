@@ -15,14 +15,48 @@
         function warning_delete($nip){
             $data['title']='WARNING!!';
             $display['content']=$nip;
+            $display['id']=$id;
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/warning_delete_pengalaman_kerja',$display);
             $this->load->view('admin/admin_footer_view');
         }
 
-        function delete($nip){
-            $this->model_data_pengalaman_kerja->deleteByNIP($nip);
-            redirect(base_url() . 'admin/con_data_pegawai/view/'.$nip);
+        function delete($nip,$id){
+            $this->model_data_pengalaman_kerja->deleteByID($id);
+            redirect(base_url() . 'admin/con_data_pegawai/list_all/'.$nip);
+        }
+
+        function list_all($nip){
+            $all_pengalaman = $this->model_data_pengalaman_kerja->selectByNIP($nip);
+            if($all_pengalaman->num_rows()==0){
+                $display['content'] = 'Masih kosong';
+            }else{
+                $this->load->library('table');
+                $this->table->set_template(array('table_open' => '<table align="center" width="80%" border="1" cellpadding="2" cellspacing="2">'));
+                $this->table->set_heading('No', 'Tempat Kerja', 'Alamat','Tahun Masuk', 'Tahun Keluar', 'Gaji', 'Jabatan', 'Aksi');
+                $i=1;
+                foreach($all_pengalaman->result() as $peng){
+                    $this->table->add_row(
+                            $i,
+                            $peng->tempat_kerja,
+                            $peng->alamat,
+                            $peng->tahun_masuk,
+                            $peng->tahun_keluar,
+                            $peng->gaji_terakhir,
+                            $peng->jabatan_terakhir,
+                            anchor(base_url() . 'admin/con_data_pengalaman_kerja/edit/'.$peng->nip.'/'.$peng->ID,'Edit').
+                            ' | '.
+                            anchor(base_url() . 'admin/con_data_organisasi/warning_delete/'.$peng->nip.'/'.$peng->ID,'Delete')
+                        );
+                    $i++;
+                }
+                $display['content']=$this->table->generate();
+            }
+            $display['nip']=$nip;
+            $data['title']='Daftar Pengalaman Kerja NIP '.$nip;
+            $this->load->view('admin/admin_header_view',$data);
+            $this->load->view('admin/pengalaman_kerja_pegawai',$display);
+            $this->load->view('admin/admin_footer_view');
         }
 
         function view($nip){
@@ -47,31 +81,34 @@
             $this->load->view('admin/admin_footer_view');
         }
 
-        function edit($nip,$mode){
-            if($mode=='edit'){
-                $array = $this->model_data_pengalaman_kerja->selectByNIP($nip)->row();
+        function edit($nip='',$id=''){
 
-                $display['mode']=$mode;
-                $display['nip']=$nip;
-                $display['jenjang']=$array->jenjang;
-                $display['nama_tempat']=$array->nama_tempat;
-                $display['tahun_masuk']=$array->tahun_masuk;
-                $display['tahun_lulus']=$array->tahun_lulus;
-                $display['gelar']=$array->gelar;
-                $display['no_ijasah']=$array->no_ijasah;
+            if($id!=''){
+                $array_data = $this->model_data_pengalaman_kerja->selectByID($id)->row();
 
-                $data['title'] = 'Edit data pengalaman kerja pegawai';
+                $display['mode']='edit';
+                $display['ID']=$array_data->ID;
+                $display['nip']=$array_data->nip;
+                $display['tempat_kerja']=$array_data->tempat_kerja;
+                $display['alamat']=$array_data->alamat;
+                $display['tahun_masuk']=$array_data->tahun_masuk;
+                $display['tahun_keluar']=$array_data->tahun_keluar;
+                $display['gaji_terakhir']=$array_data->gaji_terakhir;
+                $display['jabatan_terakhir']=$array_data->jabatan_terakhir;
+
+                $data['title'] = 'Edit data pengalaman kerja';
             }else{
-                $display['mode']=$mode;
+                $display['mode']='tambah';
+                $display['ID']='';
                 $display['nip']=$nip;
-                $display['jenjang']='';
-                $display['nama_tempat']='';
+                $display['tempat_kerja']='';
+                $display['alamat']='';
                 $display['tahun_masuk']='';
-                $display['tahun_lulus']='';
-                $display['gelar']='';
-                $display['no_ijasah']='';
+                $display['tahun_keluar']='';
+                $display['gaji_terakhir']='';
+                $display['jabatan_terakhir']='';
 
-                $data['title'] = 'Tambah data pengalaman kerja pegawai';
+                $data['title'] = 'Tambah data pengalaman kerja';
             }
             $this->load->view('admin/admin_header_view',$data);
             $this->load->view('admin/form_data_pengalaman_kerja',$display);
@@ -80,12 +117,12 @@
 
         function op_edit($mode){
             if($mode=='edit'){
-                $nip = $_POST['nip'];
-                $this->model_data_pengalaman_kerja->updateData($nip,$_POST);
-            }else if($mode=='insert'){
+                $id = $_POST['id'];
+                $this->model_data_pengalaman_kerja->updateData($id,$_POST);
+            }else if($mode=='tambah'){
                 $this->model_data_pengalaman_kerja->insert($_POST);
             }
-            redirect(base_url().'admin/con_data_pengalaman_kerja/view/'.$_POST['nip']);
+            redirect(base_url().'admin/con_data_pengalaman_kerja/list_all/'.$_POST['nip']);
         }
     }
 ?>

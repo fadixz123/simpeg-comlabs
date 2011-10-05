@@ -37,12 +37,22 @@
             return $query_by_nip;
         }
 
+        function selectByID($id){
+            $query_by_id = $this->db->get_where('data_pengalaman_kerja',array('id'=>$id));
+            return $query_by_id;
+        }
+
         function deleteByNIP($nip){
             $this->db->where('nip',$nip);
             $this->db->delete('data_pengalaman_kerja');
         }
 
-        function updateData($nip,$array_data=''){
+        function deleteByID($id){
+            $this->db->where('ID',$id);
+            $this->db->delete('data_pengalaman_kerja');
+        }
+
+        function updateData($ID,$array_data=''){
             if($array_data ==''){
                 $array_data = array(
                   'nip'=>$this->nip,
@@ -54,7 +64,7 @@
                   'jabatan_terakhir'=>$this->jabatan_terakhir
                 );
             }
-            $this->db->where('nip',$nip);
+            $this->db->where('ID',$ID);
             $this->db->update('data_pengalaman_kerja',$array_data);
         }
 

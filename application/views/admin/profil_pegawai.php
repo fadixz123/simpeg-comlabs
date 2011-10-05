@@ -46,6 +46,8 @@ Jenis Kelamin : <?php if($stat_data) echo $jenis_kelamin?>
 <?php echo $pasangan ?>
 <a href="<?php echo base_url() ?>admin/con_data_pendidikan_terakhir/view/<?php echo $nip ?>">Pendidikan Terakhir</a>
 <br />
+<a href="<?php echo base_url() ?>admin/con_data_pengalaman_kerja/list_all/<?php echo $nip?>">Pengalaman Terakhir</a>
+<br />
 <a href="<?php echo base_url() ?>admin/con_data_pegawai">Lihat Semua Pegawai</a>
 <br />
 <a href="<?php echo base_url() ?>admin/con_data_organisasi/list_all/<?php echo $nip ?>">Lihat Data Organisasi</a>
@@ -53,3 +55,7 @@ Jenis Kelamin : <?php if($stat_data) echo $jenis_kelamin?>
 <a href="<?php echo base_url() ?>admin/con_data_dev_mandiri/list_all/<?php echo $nip ?>">Lihat Data Pengembangan Mandiri</a>
 <br />
 <a href="<?php echo base_url() ?>admin/con_data_diklat/list_all/<?php echo $nip ?>">Lihat Data Diklat</a>
+<br />
+<a href="<?php echo base_url() ?>admin/con_data_sanksi/list_all/<?php echo $nip ?>">Lihat Data Sanksi</a>
+<br />
+<a href="<?php echo base_url() ?>admin/con_data_pengalaman/list_all/<?php echo $nip ?>">Lihat Data Pengalaman</a>
